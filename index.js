@@ -10,12 +10,12 @@ var playerName=readlineSync.question(playerName);
 console.log(chalk.cyan("Welcome "+ playerName + " Let's Begin!"));
 
 function questionBank(question,answer){
-    console.log(chalk.redBright("Please Type answer in this format: Jon Snow (Words first letter in Capital)"));
+    
     console.log(chalk.keyword('orange')(question));
     var playerAnswer=readlineSync.question(playerAnswer);
     console.log("Your Answer: "+ playerAnswer);
 
-    if(playerAnswer === answer){
+    if(playerAnswer.toUpperCase() === answer.toUpperCase()){
        console.log(chalk.green("Correct Answer!"));
        score=score + 1;
     }else{
@@ -39,7 +39,6 @@ questionBank("7. Which character says the line: “Say it. Say her name. Say it!
 questionBank("8. The largest skull in the dungeons beneath King’s Landing belonged to which dragon?","Balerion");
 questionBank("9. Name the ancestral home of House Lannister.","Casterly Rock");
 questionBank("10. Which character ends up being crowned King of the Six Kingdoms in the final episode?","Bran Stark");
-
 if(score===10){
     console.log("Your Final Score:",score);
   console.log("Congratulations," + playerName +" you are a TRUE fan of Game Of Thrones");
